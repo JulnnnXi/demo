@@ -4,11 +4,38 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    infoList: [],
+    typeList: [],
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 500
   },
+  
+
+
+  onReady() {
+    this.videoCtx = wx.createVideoContext('myVideo')
+  },
+  play() {
+    this.videoCtx.play()
+  },
+  pause() {
+    this.videoCtx.pause()
+  },
+
+
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -42,6 +69,41 @@ Page({
         }
       })
     }
+  },
+  onLoad: function () {
+    const _this = this;
+    wx.request({
+      url: 'https://route.showapi.com/126-2',
+      data: {
+        showapi_appid: "79086",
+        showapi_sign: "5ae1340b14ce40a19d763910107cfd9c"
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+      //  console.log(res.data.showapi_res_body.pagebean.contentlist)
+        _this.setData({
+          infoList: res.data.showapi_res_body.pagebean.contentlist
+        })
+      }
+    })
+    wx.request({
+      url: 'https://route.showapi.com/126-1',
+      data: {
+        showapi_appid: "79086",
+        showapi_sign: "5ae1340b14ce40a19d763910107cfd9c"
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success(res) {
+        console.log(res.data.showapi_res_body.allTypeList)
+        _this.setData({
+          typeList: res.data.showapi_res_body.allTypeList
+        })
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

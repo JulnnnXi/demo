@@ -2,29 +2,42 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#f66",
-    "navigationBarTitleText": "淘女郎",
+    "navigationBarBackgroundColor": "#00b3c7",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 50
   },
   "tabBar": {
     "color": "#000000",
-    "selectedColor": "#f66",
+    "selectedColor": "#00b3c7",
     "backgroundColor": "#fff",
-    "borderStyle": "white",
-    "position": "top",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    },
-    {
-      "pagePath": "pages/list/list",
-      "text": "列表"
-    }]
+    "borderStyle": "#000",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "imgs/home1.png",
+        "selectedIconPath": "imgs/home.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "订单",
+        "iconPath": "imgs/order1.png",
+        "selectedIconPath": "imgs/order.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "imgs/user1.png",
+        "selectedIconPath": "imgs/user.png"
+      }
+    ]
   }
 }

@@ -19,3 +19,48 @@
 .usermotto {
   margin-top: 200px;
 }
+.container {
+  width: 100%;
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 480rpx;
+}
+.slide-image{
+  width: 100%;
+}
+.list {
+  width: 100%;
+  height: 200rpx;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+.list .realName {
+  line-height: 200rpx;
+  position: absolute;
+  left: 20%;
+  top: -20%
+}
+.list .city {
+  line-height: 200rpx;
+  font-size: 30rpx;
+  position: absolute;
+  left: 20%;
+  top: 20%
+}
+.list image {
+  position: absolute;
+  top: 10%;
+  height: 80%;
+  width: 120rpx;
+}
+.typelist {
+  height: 80rpx;
+  min-width: 100%;
+}
+.typelist text {
+  display: inline-block;
+  width: 100rpx;
+  height: 100%;
+}
